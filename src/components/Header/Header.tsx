@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   width: 100%;
 
   background-image: url('bg.png');
-  height: 774px;
+  height: 765px;
   background-size: cover;
   background-repeat: no-repeat;
 `

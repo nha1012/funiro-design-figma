@@ -6,7 +6,7 @@ import ImageSlide from './ImageSlide'
 const Slide = (props: any) => {
   return (
     <Container className={props.className}>
-      <PreviewContainer>
+      <PreviewContainer className="preview">
         <Preview>
           <h1>High-Quality<br />Furniture<br />Just For You</h1>
           <p>Our furniture is made from selected and best quality materials that are suitable for your dream home</p>
@@ -14,7 +14,7 @@ const Slide = (props: any) => {
         </Preview>
       </PreviewContainer>
       <ImageSlide></ImageSlide>
-      <PriceContainer>
+      <PriceContainer className="price-container">
         <h3>{props.value.name}</h3>
         <p>{props.value.description}</p>
         <div className="price">
@@ -36,12 +36,52 @@ const Container = styled.div`
   display: none;
   flex-direction: row;
   justify-content: flex-end;
+  overflow-x: hidden;
   .slide-image{
     margin-top: 60px;
   }
+  .price-container{
+    animation-duration: 1s;
+  animation-timing-function: ease-ease-in-out;
+  }
+
+  
   &.active{
     display: flex;
+    .price-container{
+      animation-name: show;
+      animation-timing-function: ease-ease-in-out;
+    }
+    .preview{
+      animation-name: scale;
+      animation-timing-function: ease-in-out;
+    }
+    @keyframes show {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
+
+    @keyframes scale {
+      from {
+        opacity: 0;
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    
   }
+
+
 `
 const PreviewContainer = styled.div`
   display: flex;
@@ -53,6 +93,9 @@ const PreviewContainer = styled.div`
   position: absolute;
   left: 0;
   z-index: 4;
+  animation-duration: 1s;
+  animation-timing-function: ease-ease-in-out;
+
 `
 
 const Preview = styled.div`
