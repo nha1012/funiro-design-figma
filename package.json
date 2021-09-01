@@ -22,7 +22,8 @@
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
     "typescript": "~4.1.5",
-    "yarn": "^1.22.11"
+    "yarn": "^1.22.11",
+    "styled-components": "^5.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,7 +49,6 @@
   "devDependencies": {
     "@types/photoswipe": "^4.1.2",
     "@types/react-slick": "^0.23.5",
-    "@types/styled-components": "^5.1.13",
-    "styled-components": "^5.3.1"
+    "@types/styled-components": "^5.1.13"
   }
 }
