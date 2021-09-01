@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import image from '../../assets/Images.svg'
+import heart from '../../assets/Icon/Heart-white.svg'
+import share from '../../assets/Icon/gridicons_share.svg'
 const ProductItem = () => {
   return (
     <Container>
@@ -10,8 +12,23 @@ const ProductItem = () => {
         <span>Test</span><br />
         <i>40000</i><del>3000</del>
       </div>
+      <div className="product-more blur"></div>
       <div className="product-more">
-        
+        <div className="wrapper">
+          <div>
+            <button>Add to cart</button>
+          </div>
+          <div className="action">
+            <div>
+              <img src={share} alt="" />
+              <span>Share</span>
+            </div>
+            <div>
+              <img src={heart} alt="" />
+              <span>Like</span>
+            </div>
+          </div>
+        </div>
       </div>
     </Container>
   )
@@ -73,8 +90,7 @@ const Container = styled.div`
         margin: 8px 16px;
       }
     }
-
-    .product-more{
+    .product-more.blur{
       max-width: 285px;
       height: 446px;
       display: flex;
@@ -85,6 +101,92 @@ const Container = styled.div`
       left: 0;
       right: 0;
       bottom: 0;
+      opacity: 0;
+    }
+    .product-more{
+      display: flex;
+      opacity: 0;
+      max-width: 285px;
+      height: 446px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      animation-name: show-more-action;
+      transition-duration: 1s;
+      animation-timing-function: ease-ease-in-out;
+      div button{
+        width: 202px;
+        height: 48px;
+        border-radius: 0;
+        border: none;
+        color: #E89F71;
+        cursor: pointer;
+        &:hover{
+        color: #fff;
+        background-color: #E89F71;
+
+        }
+      }
+
+      .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+
+        .action{
+          margin-top: 24px;
+          display: flex;
+          justify-content: space-between;
+          margin-left: 20px;
+          img{
+            width: 24px;
+            height: 24px;
+            fill: red;
+          }
+          div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 30px;
+            cursor: pointer;
+            span{
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 150%;
+              color: #FFFFFF;
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+    /* hover product */
+    &:hover{
+        .product-more{
+          opacity: 1;
+        }
+        .product-more.blur{
+          opacity: 0.72;
+        }
+      }
+
+    @keyframes show-more-action {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0%);
+        opacity: 1;
+      }
     }
 `
 

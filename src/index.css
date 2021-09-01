@@ -9,3 +9,14 @@
 a {
   text-decoration: none;
 }
+.slick-slide.slick-current {
+  width: 404px !important;
+  height: 582px;
+  margin-right: 20px;
+}
+
+.slick-slide {
+  width: 372px !important;
+  height: 486px;
+  margin-right: 20px;
+}
