@@ -1,22 +1,75 @@
 * {
   margin: 0;
   padding: 0;
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
+  overflow-x: visible;
   font-family: 'Nunito', sans-serif;
 }
 
 a {
   text-decoration: none;
 }
-.slick-slide.slick-current {
+
+/* Inspirations carousel */
+.carousel .slick-slide.slick-current {
   width: 404px !important;
   height: 582px;
   margin-right: 20px;
 }
+.carousel .slick-slide.slick-current .room-details {
+  display: flex !important;
+}
 
-.slick-slide {
+.carousel .slick-slide.slick-current .right-click {
+  display: flex !important;
+}
+
+.carousel .slick-slide {
   width: 372px !important;
   height: 486px;
   margin-right: 20px;
+}
+.carousel .slick-slide .room-details {
+  display: none !important;
+}
+.carousel .slick-slide .right-click {
+  display: none !important;
+}
+
+/* tip trick carousel */
+
+.carousel-tip .slick-slide {
+  width: 391px !important;
+  height: 370px;
+  margin-right: 20px;
+}
+.indicator-item {
+  position: static;
+  width: 27px;
+  height: 27px;
+  left: 31px;
+  top: 0px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 100%;
+}
+.indicator-dots {
+  width: 11px;
+  height: 11px;
+  left: 39px;
+  top: 8px;
+  background: #d8d8d8;
+  box-sizing: border-box;
+  border-radius: 100%;
+}
+
+.slick-active .indicator-item {
+  border: 1px solid #e89f71;
+}
+.slick-active .indicator-dots {
+  background-color: #e89f71;
 }
